@@ -1,0 +1,5 @@
+pt-BR:
+  sessions:
+    create:
+      flash:
+        invalid_credentials: "E-mail ou senha incorretos."

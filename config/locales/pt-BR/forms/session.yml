@@ -1,0 +1,6 @@
+pt-BR:
+  simple_form:
+    labels:
+      session:
+        email: "E-mail"
+        password: "Senha"

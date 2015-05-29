@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Timesheet</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><%= t("title") %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
 
-<%= yield %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to t("title"), root_path, class: "navbar-brand" %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user.present? %>
+              <li class="dropdown">
+                <%= link_to "#", class: "dropdown-toggle", data: { toggle: "dropdown" } do %>
+                  <%= current_user.name %>
+                  <span class="caret"></span>
+                <% end %>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a>Logout</a></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to t("sessions.new.title"), new_session_url %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <%= flash_messages %>
+
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
 </body>
 </html>

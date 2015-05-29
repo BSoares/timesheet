@@ -28,6 +28,14 @@ gem "turbolinks"
 # https://github.com/codahale/bcrypt-ruby
 gem "bcrypt"
 
+# Helpers to build forms
+# https://github.com/plataformatec/simple_form
+gem "simple_form"
+
+# To normalize data
+# https://github.com/mdeering/attribute_normalizer
+gem "attribute_normalizer"
+
 group :development, :test do
   # Use Unicorn with rails server command
   # https://github.com/samuelkadolph/unicorn-rails
@@ -73,4 +81,27 @@ group :development do
   # Detect N+1 queries and others performance improvements.
   # https://github.com/flyerhzm/bullet
   gem "bullet"
+end
+
+group :test do
+  # https://github.com/rspec/rspec-rails
+  gem "rspec-rails"
+
+  # factory_girl is a fixtures replacement.
+  # https://github.com/thoughtbot/factory_girl_rails
+  gem "factory_girl_rails"
+
+  # Capybara helps you test web applications by simulating how a real user would
+  # interact with your app.
+  # https://github.com/jnicklas/capybara
+  gem "capybara"
+
+  # To test common Rails functionality like validations.
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem "shoulda-matchers"
+
+  # Formulaic allows you to specify a hash of attributes to be input rather than
+  # procedurally calling Capybara's DSL methods.
+  # https://github.com/thoughtbot/formulaic
+  gem "formulaic"
 end

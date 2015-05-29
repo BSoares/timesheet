@@ -1,0 +1,7 @@
+pt-BR:
+  sessions:
+    new:
+      title: "Login"
+      submit: "Login"
+    destroy:
+      title: "Logout"

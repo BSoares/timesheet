@@ -7,6 +7,9 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
+SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
 Style/PercentQLiterals:
   EnforcedStyle: upper_case_q
 
@@ -24,3 +27,5 @@ AllCops:
     - "config/locales/**/*"
     - "**/*.yml"
     - "**/*.erb"
+    - "config/initializers/simple_form_bootstrap.rb"
+    - "config/initializers/simple_form.rb"
