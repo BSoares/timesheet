@@ -1,45 +1,76 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
+ruby "2.2.2"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails"
+gem "rails", "4.2.1"
+
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem "pg"
+
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem "sass-rails", "~> 5.0"
+
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem "uglifier", ">= 1.3.0"
+
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem "coffee-rails", "~> 4.1.0"
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem "jquery-rails"
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Turbolinks makes following links in your web application faster.
+# https://github.com/rails/turbolinks
+gem "turbolinks"
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# OpenBSD bcrypt() password hashing algorithm
+# https://github.com/codahale/bcrypt-ruby
+gem "bcrypt"
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # Use Unicorn with rails server command
+  # https://github.com/samuelkadolph/unicorn-rails
+  gem "unicorn-rails"
+  gem "unicorn"
+
+  # https://github.com/rweng/pry-rails
+  gem "pry-rails"
+
+  # Adds step, next, finish and continue commands and breakpoints to
+  # Pry using byebug.
+  # https://github.com/deivid-rodriguez/pry-byebug
+  gem "pry-byebug"
+
+  # Ruby library that pretty prints Ruby objects in full color.
+  # https://github.com/michaeldv/awesome_print
+  gem "awesome_print", require: "ap"
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  # https://github.com/rails/web-console
+  gem "web-console", "~> 2.0"
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Spring speeds up development by keeping your application running in
+  # the background.
+  # https://github.com/rails/spring
+  gem "spring"
 end
 
+group :development do
+  # RuboCop is a Ruby static code analyzer.
+  # https://github.com/bbatsov/rubocop
+  gem "rubocop", require: false
+
+  # guard-rubocop allows you to automatically check Ruby code style with
+  # RuboCop when files are modified.
+  # https://github.com/yujinakayama/guard-rubocop
+  gem "guard-rubocop"
+
+  # Turns off the Rails asset pipeline log.
+  # https://github.com/evrone/quiet_assets
+  gem "quiet_assets"
+
+  # Detect N+1 queries and others performance improvements.
+  # https://github.com/flyerhzm/bullet
+  gem "bullet"
+end
