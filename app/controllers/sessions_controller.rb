@@ -14,6 +14,11 @@ class SessionsController < ApplicationController
     render :new
   end
 
+  def destroy
+    reset_session
+    redirect_to root_url
+  end
+
   private
 
   def load_user

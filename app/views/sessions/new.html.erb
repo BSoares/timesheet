@@ -1,4 +1,4 @@
-<%= simple_form_for :session, url: sessions_path do |f| %>
+<%= simple_form_for :session, url: session_create_url do |f| %>
   <%= f.input :email %>
   <%= f.input :password %>
   <%= f.button :submit, t(".submit") %>

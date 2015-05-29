@@ -28,12 +28,12 @@
                   <%= current_user.name %>
                   <span class="caret"></span>
                 <% end %>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a>Logout</a></li>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t("sessions.destroy.title"), logout_url, method: :delete %></li>
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to t("sessions.new.title"), new_session_url %></li>
+              <li><%= link_to t("sessions.new.title"), login_url %></li>
             <% end %>
           </ul>
         </div>
