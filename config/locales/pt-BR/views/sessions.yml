@@ -1,7 +1,7 @@
 pt-BR:
   sessions:
     new:
-      title: "Login"
-      submit: "Login"
+      title: "Entrar"
+      submit: "Entrar"
     destroy:
-      title: "Logout"
+      title: "Sair"

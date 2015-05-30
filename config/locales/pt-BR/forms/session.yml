@@ -4,3 +4,7 @@ pt-BR:
       session:
         email: "E-mail"
         password: "Senha"
+    placeholders:
+      session:
+        email: "E-mail"
+        password: "Senha"
