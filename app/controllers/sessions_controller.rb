@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :authenticate!
+
   def new; end
 
   def create

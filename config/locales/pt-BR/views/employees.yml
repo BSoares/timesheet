@@ -1,0 +1,6 @@
+pt-BR:
+  employees:
+    new:
+      title: "Adicionar Funcionário"
+    edit:
+      title: "Editar Funcionário"

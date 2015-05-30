@@ -1,0 +1,6 @@
+pt-BR:
+  employees:
+    create:
+      flash:
+        success: "Funcionário criado com sucesso."
+        error: "Erro ao criar Funcionário."

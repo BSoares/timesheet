@@ -1,0 +1,6 @@
+pt-BR:
+  simple_form:
+    labels:
+      employee:
+        cpf: "CPF"
+        name: "Nome"
