@@ -126,6 +126,7 @@ pt-BR:
       too_short: 'é muito curto (mínimo: %{count} caracteres)'
       wrong_length: não possui o tamanho esperado (%{count} caracteres)
       other_than: deve ser diferente de %{count}
+      unauthorized_access: "Acesso negado, login requerido."
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
