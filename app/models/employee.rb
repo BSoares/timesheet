@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+  has_many :attendances, dependent: :delete_all
+
   before_save :format_cpf
 
   validates :cpf,
@@ -22,6 +24,6 @@ class Employee < ActiveRecord::Base
   end
 
   def format_cpf
-    self.cpf = CPF.new(self.cpf).formatted
+    self.cpf = CPF.new(cpf).formatted
   end
 end

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   post :login, to: "sessions#create", as: :session_create
   delete :logout, to: "sessions#destroy"
 
-  resources :employees
+  resources :employees, except: :show
+
+  resources :attendances, only: :create
 end

@@ -18,8 +18,8 @@ RSpec.describe Employee do
       valid_cpfs = ["399.537.274-06", "39953727406", "235.224.884-15"]
       it { is_expected.to allow_value(*valid_cpfs).for(:cpf) }
 
-      invalid_cpfs = ["123", "123.456.789-09", "000.000.000-00", "22222222222",
-        "22322252828"]
+      invalid_cpfs = [
+        "123", "123.456.789-09", "000.000.000-00", "22222222222", "22322252828"]
       it { is_expected.to_not allow_value(*invalid_cpfs).for(:cpf) }
     end
   end

@@ -117,4 +117,8 @@ group :test do
   # procedurally calling Capybara's DSL methods.
   # https://github.com/thoughtbot/formulaic
   gem "formulaic"
+
+  # "time travel" and "time freezing" capabilities.
+  # https://github.com/travisjeffery/timecop
+  gem "timecop"
 end

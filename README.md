@@ -16,7 +16,7 @@ brew install homebrew/versions/phantomjs198
 
 1. Install the gems with ```bundle install```
 2. Prepare the database with ```rake db:setup```
-3. And finaly run the server with ```rails s``
+3. And finaly run the server with ```rails s```
 
 ### Running tests
 

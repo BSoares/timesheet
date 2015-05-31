@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      attendance:
+        one: "Comparecimento"
+        other: "Comparecimentos"
+    attributes:
+      attendance:
+        day: "Dia"
+        entrance_at: "Entrada às"
+        departure_at: "Saída às"
+    errors:
+      attendance:
+        attributes:
+          departure_at:
+            greater_than_entrance_at: "deve ser maior do que o horáriode entrada."

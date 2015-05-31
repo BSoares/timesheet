@@ -1,0 +1,8 @@
+pt-BR:
+  simple_form:
+    labels:
+      attendance:
+        employee_cpf: "CPF do Funcionário"
+    placeholders:
+      attendance:
+        employee_cpf: "CPF do Funcionário"

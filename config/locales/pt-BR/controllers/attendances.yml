@@ -1,0 +1,8 @@
+pt-BR:
+  attendances:
+    create:
+      flash:
+        success: "Ponto registrado com sucesso."
+        error: "Erro ao registrar ponto."
+        employee_not_found: "Funcionário não encontrado."
+        already_registered: "Ponto já registrado."
