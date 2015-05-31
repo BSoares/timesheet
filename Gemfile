@@ -32,6 +32,10 @@ gem "simple_form"
 # https://github.com/mdeering/attribute_normalizer
 gem "attribute_normalizer"
 
+# Create, validate and format CPF and CNPJ.
+# https://github.com/fnando/cpf_cnpj
+gem "cpf_cnpj"
+
 group :development, :test do
   # Use Unicorn with rails server command
   # https://github.com/samuelkadolph/unicorn-rails

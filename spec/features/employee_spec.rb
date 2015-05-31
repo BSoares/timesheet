@@ -59,6 +59,26 @@ RSpec.feature "Employee" do
       expect(created_employee.name).to eql employee.name
     end
 
+    scenario "with unformatted cpf" do
+      login_with user
+
+      click_link t("employees.index.title")
+
+      click_link t("employees.new.title")
+
+      employee = build(:employee)
+
+      fill_form :employee,
+        cpf: "25946451766",
+        name: employee.name
+
+      submit_form
+
+      created_employee = Employee.first
+
+      expect(created_employee.cpf).to eql "259.464.517-66"
+    end
+
     scenario "with invalid params" do
       login_with user
 
