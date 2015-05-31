@@ -37,6 +37,19 @@ class EmployeesController < ApplicationController
     render :edit
   end
 
+  def destroy
+    load_employee
+
+    if @employee.destroy
+      flash[:success] = t(".flash.success")
+      redirect_to employees_path(@employee)
+      return
+    end
+
+    flash[:error] = t(".flash.error")
+    render :index
+  end
+
   private
 
   def employee_params

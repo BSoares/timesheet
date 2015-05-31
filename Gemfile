@@ -92,6 +92,19 @@ group :test do
   # https://github.com/jnicklas/capybara
   gem "capybara"
 
+  # Poltergeist is a driver for Capybara. It allows you to run your Capybara
+  # tests on a headless WebKit browser, provided by PhantomJS.
+  # https://github.com/teampoltergeist/poltergeist
+  gem "poltergeist"
+
+  # Launchy is helper class for launching cross-platform applications.
+  # https://github.com/copiousfreetime/launchy
+  gem "launchy"
+
+  # Database Cleaner is a set of strategies for cleaning your database in Ruby.
+  # https://github.com/DatabaseCleaner/database_cleaner
+  gem "database_cleaner"
+
   # To test common Rails functionality like validations.
   # https://github.com/thoughtbot/shoulda-matchers
   gem "shoulda-matchers"

@@ -98,7 +98,7 @@ RSpec.feature "Employee" do
   end
 
   context "edit" do
-    scenario "with valid params" do
+    before do
       login_with user
 
       employee = create(:employee)
@@ -106,32 +106,26 @@ RSpec.feature "Employee" do
       click_link t("employees.index.title")
 
       click_link t("employees.edit.title", name: employee.name)
+    end
 
-      employee2 = build(:employee)
+    scenario "with valid params" do
+      edited_employee = build(:employee, cpf: "228.375.241-82", name: "XXX")
 
       fill_form :employee,
-        cpf: employee2.cpf,
-        name: employee2.name
+        cpf: edited_employee.cpf,
+        name: edited_employee.name
 
       submit_form
 
       expect(page).to have_content t("employees.update.flash.success")
 
-      edited_employee = Employee.first
+      saved_employee = Employee.first
 
-      expect(edited_employee.cpf).to eql employee2.cpf
-      expect(edited_employee.name).to eql employee2.name
+      expect(saved_employee.cpf).to eql edited_employee.cpf
+      expect(saved_employee.name).to eql edited_employee.name
     end
 
     scenario "with invalid params" do
-      login_with user
-
-      employee = create(:employee)
-
-      click_link t("employees.index.title")
-
-      click_link t("employees.edit.title", name: employee.name)
-
       fill_form :employee,
         cpf: "",
         name: ""
@@ -144,6 +138,44 @@ RSpec.feature "Employee" do
     def submit_form
       click_button t("helpers.submit.update",
         model: t("activerecord.models.employee.one"))
+    end
+  end
+
+  context "destroy" do
+    scenario "ignoring the confirmation dialog" do
+      login_with user
+
+      employee = create(:employee)
+
+      click_link t("employees.index.title")
+
+      click_link t("employees.destroy.title", name: employee.name)
+
+      expect(page).to have_content t("employees.destroy.flash.success")
+      expect(page).to_not have_content employee.cpf
+    end
+
+    scenario "canceling from the browser confirmation dialog", js: true do
+      login_with user
+
+      employee = create(:employee)
+
+      click_link t("employees.index.title")
+
+      handle_js_confirm false do
+        click_link t("employees.destroy.title", name: employee.name)
+      end
+
+      expect(page).to_not have_content t("employees.destroy.flash.success")
+      expect(page).to have_content employee.cpf
+    end
+
+    def handle_js_confirm(accept = true)
+      page.evaluate_script "window.original_confirm_function = window.confirm"
+      page.evaluate_script "window.confirm = " \
+        "function(msg) { return #{accept}; }"
+      yield
+      page.evaluate_script "window.confirm = window.original_confirm_function"
     end
   end
 end

@@ -5,4 +5,7 @@ pt-BR:
     new:
       title: "Adicionar Funcionário"
     edit:
-      title: "Editar Funcionário(a) %{name}"
+      title: "Editar funcionário(a) %{name}"
+    destroy:
+      title: "Excluír funcionário(a) %{name}"
+      confirm: "Tem certeza que deseja remover o/a funcionário(a) %{name}?"

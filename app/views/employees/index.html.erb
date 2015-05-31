@@ -4,16 +4,24 @@
 
 <table class="table table-striped">
   <thead>
+    <th width="120">CPF</th>
     <th>Name</th>
+    <th width="36"></th>
     <th width="36"></th>
   </thead>
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
+        <td><%= employee.cpf %></td>
         <td><%= employee.name %></td>
         <td>
           <%= link_to edit_employee_url(employee), title: t("employees.edit.title", name: employee.name) do %>
             <i class="fa fa-pencil"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to employee_url(employee), method: :delete, title: t("employees.destroy.title", name: employee.name), data: { confirm: t("employees.destroy.confirm", name: employee.name) } do %>
+            <i class="fa fa-trash-o"></i>
           <% end %>
         </td>
       </tr>

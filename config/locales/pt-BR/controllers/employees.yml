@@ -8,3 +8,7 @@ pt-BR:
       flash:
         success: "Funcionário editado com sucesso."
         error: "Erro ao editar Funcionário."
+    destroy:
+      flash:
+        success: "Funcionário excluído com sucesso."
+        error: "Erro ao excluír Funcionário."
