@@ -4,3 +4,7 @@ pt-BR:
       flash:
         success: "Funcionário criado com sucesso."
         error: "Erro ao criar Funcionário."
+    update:
+      flash:
+        success: "Funcionário editado com sucesso."
+        error: "Erro ao editar Funcionário."

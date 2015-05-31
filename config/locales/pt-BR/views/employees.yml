@@ -1,6 +1,8 @@
 pt-BR:
   employees:
+    index:
+      title: "Funcionários"
     new:
       title: "Adicionar Funcionário"
     edit:
-      title: "Editar Funcionário"
+      title: "Editar Funcionário(a) %{name}"
