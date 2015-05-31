@@ -1,5 +1,17 @@
-<%= simple_form_for @employee do |f| %>
-  <%= f.input :cpf %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <%= simple_form_for @employee do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.input :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :cpf %>
+        </div>
+      </div>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
