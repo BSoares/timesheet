@@ -2,6 +2,7 @@ pt-BR:
   employees:
     index:
       title: "Funcionários"
+      empty: "Nenhum funcionário cadastrado."
     new:
       title: "Adicionar Funcionário"
     edit:

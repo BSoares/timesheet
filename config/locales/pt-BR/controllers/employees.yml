@@ -3,12 +3,12 @@ pt-BR:
     create:
       flash:
         success: "Funcionário criado com sucesso."
-        error: "Erro ao criar Funcionário."
+        error: "Erro ao criar funcionário."
     update:
       flash:
         success: "Funcionário editado com sucesso."
-        error: "Erro ao editar Funcionário."
+        error: "Erro ao editar funcionário."
     destroy:
       flash:
         success: "Funcionário excluído com sucesso."
-        error: "Erro ao excluír Funcionário."
+        error: "Erro ao excluír funcionário."
