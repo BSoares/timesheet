@@ -2,6 +2,7 @@ class MonthAttendancesController < ApplicationController
   def new
     load_employee
     @month_attendance = MonthAttendance.new
+    @month_attendance.month = DateTime.now.to_date - 1.month
   end
 
   def create
