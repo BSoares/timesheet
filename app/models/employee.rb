@@ -16,6 +16,10 @@ class Employee < ActiveRecord::Base
   normalize_attributes :name,
     with: [:squish, :blank, :titleize]
 
+  def attendances_by_month(date)
+    attendances.where(day: date.beginning_of_month..date.end_of_month)
+  end
+
   private
 
   def cpf_validation

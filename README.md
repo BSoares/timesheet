@@ -12,12 +12,17 @@ Playing around with rails 4
 brew install homebrew/versions/phantomjs198
 ```
 
-### To run
+### Running the Application
 
 1. Install the gems with ```bundle install```
-2. Prepare the database with ```rake db:setup```
-3. And finaly run the server with ```rails s```
+* Prepare the database with ```rake db:setup```
+* Insert some data ```rake db:seed```
+* And finaly run the server with ```rails s```
 
-### Running tests
+### Running Tests
 
 * Just run ```rspec```
+
+### Running Guard with Robocop
+
+* Just run ```bundle exec guard```

@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :attendance do
     association :employee, factory: :employee
-    day Date.new(1985, 10, 19)
-    entrance_at DateTime.new(1985, 10, 19, 8, 0, 0)
+    sequence(:day) { DateTime.now.to_date }
+    sequence(:entrance_at) { DateTime.now.change(hour: 8, min: 0, sec: 0) }
 
     trait :completed do
-      departure_at DateTime.new(1985, 10, 19, 17, 0, 0)
+      sequence(:departure_at) { DateTime.now.change(hour: 17, min: 0, sec: 0) }
     end
   end
 end

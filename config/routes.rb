@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post :login, to: "sessions#create", as: :session_create
   delete :logout, to: "sessions#destroy"
 
-  resources :employees, except: :show
+  resources :employees, except: :show do
+    resources :month_attendances, only: [:new, :create]
+  end
 
   resources :attendances, only: :create
 end

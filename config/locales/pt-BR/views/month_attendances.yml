@@ -1,0 +1,9 @@
+pt-BR:
+  month_attendances:
+    new:
+      title: "Comparecimentos por mês"
+      submit: "Gerar Relatório"
+    show:
+      attendances_empty: "Nenhum registro de comparecimento encontrado."
+      total: "Total"
+      without_departure: "SEM SAÍDA"

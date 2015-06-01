@@ -9,12 +9,18 @@
       <th>Name</th>
       <th width="36"></th>
       <th width="36"></th>
+      <th width="36"></th>
     </thead>
     <tbody>
       <% @employees.each do |employee| %>
         <tr>
           <td><%= employee.cpf %></td>
           <td><%= employee.name %></td>
+          <td>
+            <%= link_to new_employee_month_attendance_url(employee), title: t("month_attendances.new.title") do %>
+              <i class="fa fa-bar-chart"></i>
+            <% end %>
+          </td>
           <td>
             <%= link_to edit_employee_url(employee), title: t("employees.edit.title", name: employee.name) do %>
               <i class="fa fa-pencil"></i>
