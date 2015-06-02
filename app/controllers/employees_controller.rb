@@ -47,7 +47,7 @@ class EmployeesController < ApplicationController
     end
 
     flash[:error] = t(".flash.error")
-    render :index
+    redirect_to employees_path
   end
 
   private

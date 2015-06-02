@@ -183,6 +183,21 @@ RSpec.feature "Employee" do
       expect(page).to_not have_content employee.cpf
     end
 
+    scenario "cancel when the method destroy fails and return false" do
+      login_with user
+
+      employee = create(:employee)
+
+      click_link t("employees.index.title")
+
+      allow_any_instance_of(Employee).to receive(:destroy).and_return(false)
+
+      click_link t("employees.destroy.title", name: employee.name)
+
+      expect(page).to have_content t("employees.destroy.flash.error")
+      expect(page).to have_content employee.cpf
+    end
+
     scenario "canceling from the browser confirmation dialog", js: true do
       login_with user
 

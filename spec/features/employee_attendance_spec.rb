@@ -19,6 +19,16 @@ RSpec.feature "Employee Attendance" do
       expect(attendance_created.departure_at).to be_nil
     end
 
+    scenario "with database error during save" do
+      visit root_path
+
+      allow_any_instance_of(Attendance).to receive(:save).and_return(false)
+
+      post_attendance_with employee.cpf
+
+      expect(page).to have_content t("attendances.create.flash.error")
+    end
+
     scenario "exit with existent employee" do
       visit root_path
 
