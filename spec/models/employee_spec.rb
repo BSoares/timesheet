@@ -32,7 +32,7 @@ RSpec.describe Employee do
     end
 
     describe "cpf" do
-      it "should format the number when it is unformatted" do
+      it "format the number when it is unformatted" do
         employee.cpf = "03452898709"
 
         employee.save

@@ -106,7 +106,7 @@ RSpec.feature "Employee" do
   end
 
   context "list" do
-    specify "should show a message when the list is empty" do
+    specify "show a message when the list is empty" do
       login_with user
 
       click_link t("employees.index.title")

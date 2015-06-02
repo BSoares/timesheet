@@ -53,7 +53,7 @@ RSpec.feature "Employee Attendance" do
     end
 
     context "exit two times" do
-      specify "should show an error message" do
+      specify "show an error message" do
         visit root_path
 
         Timecop.travel Time.new(1985, 10, 19, 8, 0, 0) do

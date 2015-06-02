@@ -5,7 +5,7 @@ RSpec.describe MonthAttendance do
 
   describe "Validations" do
     describe "employee" do
-      it "should not be blank" do
+      it "not be blank" do
         month_attendance.employee = nil
 
         month_attendance.valid?
@@ -15,7 +15,7 @@ RSpec.describe MonthAttendance do
     end
 
     describe "month" do
-      it "should not be blank" do
+      it "not be blank" do
         month_attendance.month = nil
 
         month_attendance.valid?
@@ -23,7 +23,7 @@ RSpec.describe MonthAttendance do
         expect(month_attendance.errors.keys).to include :month
       end
 
-      it "should not accept invalid date" do
+      it "not accept invalid date" do
         month_attendance.month = "xxx"
 
         month_attendance.valid?

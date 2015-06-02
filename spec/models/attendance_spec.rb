@@ -18,7 +18,7 @@ RSpec.describe Attendance do
     describe "entrance_at" do
       it { is_expected.to validate_presence_of(:entrance_at) }
 
-      it "should be in the same day that day property is" do
+      it "is in the same day that day property is" do
         attendance = build(:attendance)
         attendance.day = Date.new(1985, 10, 19)
         attendance.entrance_at = DateTime.new(1985, 10, 20, 8, 0, 0)
@@ -30,7 +30,7 @@ RSpec.describe Attendance do
     end
 
     describe "departure_at" do
-      it "should be greater than entrance_at" do
+      it "is greater than entrance_at" do
         attendance = build(:attendance)
         attendance.entrance_at = DateTime.new(1985, 10, 19, 8, 0, 0)
         attendance.departure_at = DateTime.new(1985, 10, 19, 7, 0, 0)
@@ -40,7 +40,7 @@ RSpec.describe Attendance do
         expect(attendance.errors.keys).to include :departure_at
       end
 
-      it "should be in the same day that day property is" do
+      it "is in the same day that day property is" do
         attendance = build(:attendance)
         attendance.day = Date.new(1985, 10, 19)
         attendance.departure_at = DateTime.new(1985, 10, 20, 17, 0, 0)

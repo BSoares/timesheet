@@ -36,11 +36,14 @@ gem "attribute_normalizer"
 # https://github.com/fnando/cpf_cnpj
 gem "cpf_cnpj"
 
+# Makes running your Rails app easier with heroku
+# https://github.com/heroku/rails_12factor
+gem "rails_12factor"
+
 group :development, :test do
-  # Use Unicorn with rails server command
-  # https://github.com/samuelkadolph/unicorn-rails
-  gem "unicorn-rails"
-  gem "unicorn"
+  # A Ruby Web Server
+  # https://github.com/puma/puma
+  gem "puma"
 
   # https://github.com/rweng/pry-rails
   gem "pry-rails"
