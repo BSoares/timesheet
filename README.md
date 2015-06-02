@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/BSoares/timesheet/badges/gpa.svg)](https://codeclimate.com/github/BSoares/timesheet)
+[![Code Climate](https://codeclimate.com/github/BSoares/timesheet/badges/gpa.svg)](https://codeclimate.com/github/BSoares/timesheet) [![Test Coverage](https://codeclimate.com/github/BSoares/timesheet/badges/coverage.svg)](https://codeclimate.com/github/BSoares/timesheet/coverage)
 
 # Timesheet
 
@@ -16,10 +16,18 @@ brew install homebrew/versions/phantomjs198
 
 ### Running the Application
 
-1. Install the gems with ```bundle install```
-2. Prepare the database with ```rake db:setup```
-3. Insert some data ```rake db:seed```
-4. And finaly run the server with ```rails s```
+1. Dublicate and configura sensitive files
+
+```
+cp config/database.yml config/database.example.yml && \
+cp config/secrets.yml config/secrets.example.yml
+
+```
+
+2. Run ```bundle install```
+3. Prepare the database with ```rake db:setup```
+4. Insert some data ```rake db:seed```
+5. And finaly run the server with ```rails s```
 
 ### Running Tests
 
