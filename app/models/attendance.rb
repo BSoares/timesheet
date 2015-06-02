@@ -32,11 +32,11 @@ class Attendance < ActiveRecord::Base
   end
 
   def entrance_at_day_validation
-    attendance_date_check(self.entrance_at, :entrance_at)
+    attendance_date_check(entrance_at, :entrance_at)
   end
 
   def departure_at_day_validation
-    attendance_date_check(self.departure_at, :departure_at)
+    attendance_date_check(departure_at, :departure_at)
   end
 
   def attendance_date_check(field, symbol)

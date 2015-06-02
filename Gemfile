@@ -121,4 +121,7 @@ group :test do
   # "time travel" and "time freezing" capabilities.
   # https://github.com/travisjeffery/timecop
   gem "timecop"
+
+  # Code Climate Test Coverage
+  gem "codeclimate-test-reporter", require: nil
 end

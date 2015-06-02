@@ -7,10 +7,13 @@ Playing around with rails 4
 
 ### Dependencies
 
-* PhantomJS 1.9.8
+* Ruby 2.2.2
+* Rails 4.2.1
+* PostgreSQL
+* PhantomJS 1.9.8 (used in tests)
 
 ```
-# Setup in mac with homebrew
+# Setup PhantomJS 1.9.8 in mac with homebrew
 brew install homebrew/versions/phantomjs198
 ```
 

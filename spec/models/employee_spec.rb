@@ -30,5 +30,15 @@ RSpec.describe Employee do
       it { is_expected.to normalize_blank_of(:name) }
       it { is_expected.to normalize_titleize_of(:name) }
     end
+
+    describe "cpf" do
+      it "should format the number when it is unformatted" do
+        employee.cpf = "03452898709"
+
+        employee.save
+
+        expect(employee.cpf).to eql "034.528.987-09"
+      end
+    end
   end
 end
