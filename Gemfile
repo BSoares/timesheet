@@ -40,10 +40,6 @@ gem "draper"
 # https://github.com/fnando/cpf_cnpj
 gem "cpf_cnpj"
 
-# Makes running your Rails app easier with heroku
-# https://github.com/heroku/rails_12factor
-gem "rails_12factor"
-
 # A Ruby Web Server
 # https://github.com/puma/puma
 gem "puma"
@@ -131,4 +127,10 @@ group :test do
 
   # Code Climate Test Coverage
   gem "codeclimate-test-reporter", require: nil
+end
+
+group :production do
+  # Makes running your Rails app easier with heroku
+  # https://github.com/heroku/rails_12factor
+  gem "rails_12factor"
 end
