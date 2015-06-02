@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "MonthAttendanceDecorator" do
   let(:month_attendance) do
-    month_attendance = MonthAttendanceDecorator.decorate(
+    MonthAttendanceDecorator.decorate(
       build(:month_attendance, month: "01/10/1985"))
   end
 
