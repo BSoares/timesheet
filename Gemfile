@@ -32,6 +32,10 @@ gem "simple_form"
 # https://github.com/mdeering/attribute_normalizer
 gem "attribute_normalizer"
 
+# Draper adds an object-oriented layer of presentation logic
+# https://github.com/drapergem/draper
+gem "draper"
+
 # Create, validate and format CPF and CNPJ.
 # https://github.com/fnando/cpf_cnpj
 gem "cpf_cnpj"
