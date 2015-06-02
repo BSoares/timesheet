@@ -4,6 +4,7 @@ class MonthAttendancesController < ApplicationController
     @month_attendance = MonthAttendance.new
     @month_attendance.month = (DateTime.now.to_date - 1.month)
       .beginning_of_month
+    decorate
   end
 
   def create
@@ -27,5 +28,10 @@ class MonthAttendancesController < ApplicationController
       employee: @employee,
       month: month_attendance_params[:month])
     @month_attendance.valid?
+    decorate
+  end
+
+  def decorate
+    @month_attendance = MonthAttendanceDecorator.decorate(@month_attendance)
   end
 end

@@ -1,7 +1,10 @@
 <div class="row">
   <div class="col-md-12">
     <hr>
-    <h3><%= @month_attendance.employee.name %> <small class="pull-right"><%= l(@month_attendance.month, format: "%B / %Y") %></small></h3>
+    <h3>
+      <%= @month_attendance.employee.name %>
+      <small class="pull-right"><%= @month_attendance.month_formatted %></small>
+    </h3>
     <% if @month_attendance.attendances.any? %>
       <table class="table table-striped">
         <thead>
@@ -11,24 +14,12 @@
           <th width="60"><%= t("month_attendances.show.total") %></th>
         </thead>
         <tbody>
-          <% @month_attendance.attendances.each do |attendance| %>
+          <% @month_attendance.attendances.decorate.each do |attendance| %>
             <tr class="<%= "danger" if attendance.departure_at.nil? %>">
               <td><%= l(attendance.day) %></td>
-              <td><%= datetime_to_time(attendance.entrance_at) %></td>
-              <td>
-                <% if attendance.departure_at.present? %>
-                  <%= datetime_to_time(attendance.departure_at) %>
-                <% else %>
-                  <strong><%= t("month_attendances.show.without_departure") %></strong>
-                <% end %>
-              </td>
-              <td>
-                <% if attendance.departure_at.present? %>
-                  <%= seconds_to_time(attendance.departure_at - attendance.entrance_at) %>
-                <% else %>
-                  -
-                <% end %>
-              </td>
+              <td><%= attendance.entrance_time %></td>
+              <td><%= attendance.departure_time %></td>
+              <td><%= attendance.total %></td>
             </tr>
           <% end %>
         </tbody>
@@ -36,7 +27,7 @@
           <th><%= t("month_attendances.show.total") %></th>
           <th></th>
           <th></th>
-          <th><%= seconds_to_time(@month_attendance.total_in_seconds) %></th>
+          <th><%= @month_attendance.total_time %></th>
         </tfoot>
       </table>
     <% else %>
