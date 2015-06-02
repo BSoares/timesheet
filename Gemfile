@@ -40,11 +40,11 @@ gem "cpf_cnpj"
 # https://github.com/heroku/rails_12factor
 gem "rails_12factor"
 
-group :development, :test do
-  # A Ruby Web Server
-  # https://github.com/puma/puma
-  gem "puma"
+# A Ruby Web Server
+# https://github.com/puma/puma
+gem "puma"
 
+group :development, :test do
   # https://github.com/rweng/pry-rails
   gem "pry-rails"
 
