@@ -31,3 +31,14 @@ brew install homebrew/versions/phantomjs198
 ### Running Guard with Robocop
 
 * Just run ```bundle exec guard```
+
+
+### Demo
+
+https://hidden-ridge-4216.herokuapp.com/
+
+Admin access (/login):
+
+User: bruno@bsoares.com.br
+
+Password: 123456
