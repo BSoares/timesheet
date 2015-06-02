@@ -3,7 +3,7 @@
     <h2><%= t("month_attendances.new.title") %></h2>
     <%= simple_form_for @month_attendance, url: employee_month_attendances_path(@employee) do |f| %>
       <div class="form-group">
-        <%= f.input :month, label: false %>
+        <%= f.input :month, label: false, input_html: { class: "date-month" } %>
       </div>
       <div class="form-group">
         <button type="submit" href="#" class="btn btn-primary pull-right">
