@@ -9,7 +9,8 @@ RSpec.feature "Employee Attendance" do
 
       post_attendance_with employee.cpf
 
-      expect(page).to have_content t("attendances.create.flash.success")
+      expect(page).to have_content(
+        t("attendances.create.flash.success_entrance"))
 
       attendance_created = Attendance.first
 
@@ -26,7 +27,7 @@ RSpec.feature "Employee Attendance" do
 
       post_attendance_with employee.cpf
 
-      expect(page).to have_content t("attendances.create.flash.error")
+      expect(page).to have_content t("attendances.create.flash.error_entrance")
     end
 
     scenario "exit with existent employee" do
