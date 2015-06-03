@@ -2,7 +2,9 @@ pt-BR:
   attendances:
     create:
       flash:
-        success: "Ponto registrado com sucesso."
-        error: "Erro ao registrar ponto."
+        success_entrance: "Entrada registrada com sucesso."
+        success_departure: "Saída registrada com sucesso."
+        error_entrance: "Erro ao registrar entrada."
+        error_entrance: "Erro ao registrar saída."
         employee_not_found: "Funcionário não encontrado."
-        already_registered: "Ponto já registrado."
+        already_registered: "Saída já registrada."

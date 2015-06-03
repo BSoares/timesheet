@@ -31,20 +31,21 @@ class AttendancesController < ApplicationController
   def register
     if @attendance.entrance_at.nil?
       @attendance.entrance_at = DateTime.now
+      register_type = "entrance"
     elsif @attendance.departure_at.nil?
       @attendance.departure_at = DateTime.now
+      register_type = "departure"
     else
-      flash[:error] = t(".flash.already_registered")
-      return
+      return flash[:error] = t(".flash.already_registered")
     end
-    save
+    save(register_type)
   end
 
-  def save
+  def save(register_type)
     if @attendance.save
-      flash[:success] = t(".flash.success")
+      flash[:success] = t(".flash.success_#{register_type}")
     else
-      flash[:error] = t(".flash.error")
+      flash[:error] = t(".flash.error_#{register_type}")
     end
   end
 end
