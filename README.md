@@ -35,7 +35,7 @@ brew install homebrew/versions/phantomjs198
 
 ### Demo
 
-https://hidden-ridge-4216.herokuapp.com/
+https://rails4-timesheet.herokuapp.com/
 
 Admin access (/login):
 
